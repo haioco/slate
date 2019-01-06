@@ -228,7 +228,7 @@
             <a href="#lxc" class="toc-h1 toc-link" data-title="Lxc">Lxc</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-lxc" class="toc-h2 toc-link" data-title="Get All Lxc">Get All Lxc</a>
+                    <a href="#get-all-lxcs" class="toc-h2 toc-link" data-title="Get All Lxcs">Get All Lxcs</a>
                   </li>
                   <li>
                     <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
@@ -271,7 +271,7 @@ import kittn
 api = kittn.authorize('meowmeowmeow')
 ``` -->
 <pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"http://api.haiocloud.com/api/v1/lxc"</span>  -H <span class="s2">"API-Key: apikey"</span>
+curl <span class="s2">"https://api.haiocloud.com/api/v1/lxc"</span>  -H <span class="s2">"API-Key: apikey"</span>
 </code></pre>
 <blockquote>
 <p>Make sure to replace <code>apikey</code> with your API key.</p>
@@ -286,7 +286,7 @@ curl <span class="s2">"http://api.haiocloud.com/api/v1/lxc"</span>  -H <span cla
 <aside class="notice">
 You must replace <code>apikey</code> with your personal API key.
 </aside>
-<h1 id='lxc'>Lxc</h1><h2 id='get-all-lxc'>Get All Lxc</h2>
+<h1 id='lxc'>Lxc</h1><h2 id='get-all-lxcs'>Get All Lxcs</h2>
 <!-- ```ruby
 require 'kittn'
 
@@ -300,11 +300,11 @@ import kittn
 api = kittn.authorize('meowmeowmeow')
 api.kittens.get()
 ``` -->
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.haiocloud.com/api/v1/lxc"</span>  -H <span class="s2">"API-Key: apikey"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.haiocloud.com/api/v1/lxc"</span>  -H <span class="s2">"API-Key: apikey"</span>
 
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Response Body:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -351,9 +351,9 @@ api.kittens.get()
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
+<p>This endpoint retrieves all Lxcs.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
+<p><code>GET https://api.haiocloud.com/api/v1/lxc</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
