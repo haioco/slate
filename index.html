@@ -233,6 +233,9 @@
                   <li>
                     <a href="#get-a-specific-lxc" class="toc-h2 toc-link" data-title="Get a Specific Lxc">Get a Specific Lxc</a>
                   </li>
+                  <li>
+                    <a href="#lxc-resource" class="toc-h2 toc-link" data-title="Lxc resource">Lxc resource</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -309,7 +312,14 @@ You must replace <code>apikey</code> with your personal API key.
             </span><span class="s2">"netmask"</span><span class="p">:</span><span class="w"> </span><span class="s2">"255.255.255.0"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"151.80.25.254"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"mac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02:02:00:5d:aa:f1"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"resource_used"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"ram"</span><span class="p">:</span><span class="w"> </span><span class="mi">141</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"disk"</span><span class="p">:</span><span class="w"> </span><span class="mi">511</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"netin"</span><span class="p">:</span><span class="w"> </span><span class="mi">8276</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"netout"</span><span class="p">:</span><span class="w"> </span><span class="mi">704</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"uptime"</span><span class="p">:</span><span class="w"> </span><span class="mi">4502681</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
         </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"83aeefad-7414-45ba-9405-e3b3b150ac0d"</span><span class="p">,</span><span class="w">
@@ -330,7 +340,14 @@ You must replace <code>apikey</code> with your personal API key.
             </span><span class="s2">"netmask"</span><span class="p">:</span><span class="w"> </span><span class="s2">"255.255.255.0"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"151.80.25.254"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"mac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02:02:00:e0:20:88"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"resource_used"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"ram"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"disk"</span><span class="p">:</span><span class="w"> </span><span class="mi">1260</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"netin"</span><span class="p">:</span><span class="w"> </span><span class="mi">6679</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"netout"</span><span class="p">:</span><span class="w"> </span><span class="mi">26373</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"uptime"</span><span class="p">:</span><span class="w"> </span><span class="mi">2459151</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -369,14 +386,22 @@ available | true | If set to false, the result will include kittens that have al
           </span><span class="s2">"netmask"</span><span class="p">:</span><span class="w"> </span><span class="s2">"255.255.255.0"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"151.80.25.254"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"mac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02:02:00:e0:20:88"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"resource_used"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"ram"</span><span class="p">:</span><span class="w"> </span><span class="mi">141</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"disk"</span><span class="p">:</span><span class="w"> </span><span class="mi">511</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"netin"</span><span class="p">:</span><span class="w"> </span><span class="mi">8276</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"netout"</span><span class="p">:</span><span class="w"> </span><span class="mi">704</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"uptime"</span><span class="p">:</span><span class="w"> </span><span class="mi">4502681</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific Lxc.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://api.haiocloud.com/api/v1/lxc/&lt;GUID&gt;</code></p>
-<h1 id='errors'>Errors</h1>
+<h2 id='lxc-resource'>Lxc resource</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.haiocloud.com/api/v1/lxc/&lt;string:guid&gt;"</span>  -H <span class="s2">"API-Key: apikey"</span>
+</code></pre><h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
 </aside>
