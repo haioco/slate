@@ -281,7 +281,7 @@ curl <span class="s2">"https://api.haiocloud.com/api/v1/lxc"</span>  -H <span cl
 
 <p>Haio expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
 
-<p><code>Authorization: apikey</code></p>
+<p><code>API-Key: apikey</code></p>
 
 <aside class="notice">
 You must replace <code>apikey</code> with your personal API key.
@@ -292,7 +292,7 @@ You must replace <code>apikey</code> with your personal API key.
 <blockquote>
 <p>Response Body:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">  
     </span><span class="p">{</span><span class="w">
         </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f68c331a-7211-4f03-9302-b004e8ee7148"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mydomain.com"</span><span class="p">,</span><span class="w">
@@ -341,40 +341,40 @@ You must replace <code>apikey</code> with your personal API key.
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.haiocloud.com/api/v1/lxc</code></p>
 <h2 id='get-a-specific-lxc'>Get a Specific Lxc</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.haiocloud.com/api/v1/lxc/&lt;string:guid&gt;"</span>  -H <span class="s2">"API-Key: apikey"</span>
-</code></pre><h3 id='request'>Request:</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
+</code></pre>
+<!-- ### Request:
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+Parameter | Default | Description
+--------- | ------- | -----------
+include_cats | false | If set to true, the result will also include cats.
+available | true | If set to false, the result will include kittens that have already been adopted. -->
 
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Response Body:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"83aeefad-7414-45ba-9405-e3b3b150ac0d"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ali"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ali"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ram"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cpu"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"disk"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"online"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-12 21:04:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UBUNTU"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ubuntu"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"network"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92.222.115.157/30"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"netmask"</span><span class="p">:</span><span class="w"> </span><span class="s2">"255.255.255.0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"151.80.25.254"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02:02:00:e0:20:88"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific kitten.</p>
 
