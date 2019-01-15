@@ -233,8 +233,16 @@
                   <li>
                     <a href="#get-a-specific-lxc" class="toc-h2 toc-link" data-title="Get a Specific Lxc">Get a Specific Lxc</a>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#lxc-actions" class="toc-h1 toc-link" data-title="Lxc actions">Lxc actions</a>
+          </li>
+          <li>
+            <a href="#resize" class="toc-h1 toc-link" data-title="Resize">Resize</a>
+              <ul class="toc-list-h2">
                   <li>
-                    <a href="#lxc-resource" class="toc-h2 toc-link" data-title="Lxc resource">Lxc resource</a>
+                    <a href="#request-body" class="toc-h2 toc-link" data-title="Request Body:">Request Body:</a>
                   </li>
               </ul>
           </li>
@@ -271,7 +279,7 @@ import kittn
 api = kittn.authorize('meowmeowmeow')
 ``` -->
 <pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"https://api.haiocloud.com/api/v1/lxc"</span>  -H <span class="s2">"API-Key: apikey"</span>
+curl <span class="s2">"https://api.haiocloud.com/v1/lxc"</span>  -H <span class="s2">"API-Key: apikey"</span>
 </code></pre>
 <blockquote>
 <p>Make sure to replace <code>apikey</code> with your API key.</p>
@@ -286,7 +294,7 @@ curl <span class="s2">"https://api.haiocloud.com/api/v1/lxc"</span>  -H <span cl
 <aside class="notice">
 You must replace <code>apikey</code> with your personal API key.
 </aside>
-<h1 id='lxc'>Lxc</h1><h2 id='get-all-lxcs'>Get All Lxcs</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.haiocloud.com/api/v1/lxc"</span>  -H <span class="s2">"API-Key: apikey"</span>
+<h1 id='lxc'>Lxc</h1><h2 id='get-all-lxcs'>Get All Lxcs</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.haiocloud.com/v1/lxc"</span>  -H <span class="s2">"API-Key: apikey"</span>
 
 </code></pre>
 <blockquote>
@@ -353,8 +361,8 @@ You must replace <code>apikey</code> with your personal API key.
 </span></code></pre>
 <p>This endpoint retrieves all Lxcs.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://api.haiocloud.com/api/v1/lxc</code></p>
-<h2 id='get-a-specific-lxc'>Get a Specific Lxc</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.haiocloud.com/api/v1/lxc/&lt;string:guid&gt;"</span>  -H <span class="s2">"API-Key: apikey"</span>
+<p><code>GET https://api.haiocloud.com/v1/lxc</code></p>
+<h2 id='get-a-specific-lxc'>Get a Specific Lxc</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.haiocloud.com/v1/lxc/&lt;string:guid&gt;"</span>  -H <span class="s2">"API-Key: apikey"</span>
 </code></pre>
 <!-- ### Request:
 
@@ -399,9 +407,67 @@ available | true | If set to false, the result will include kittens that have al
 </span></code></pre>
 <p>This endpoint retrieves a specific Lxc.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://api.haiocloud.com/api/v1/lxc/&lt;GUID&gt;</code></p>
-<h2 id='lxc-resource'>Lxc resource</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.haiocloud.com/api/v1/lxc/&lt;string:guid&gt;"</span>  -H <span class="s2">"API-Key: apikey"</span>
-</code></pre><h1 id='errors'>Errors</h1>
+<p><code>GET https://api.haiocloud.com/v1/lxc/&lt;GUID&gt;</code></p>
+<h1 id='lxc-actions'>Lxc actions</h1><h1 id='resize'>Resize</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.haiocloud.com/v1/lxc/&lt;string:guid&gt;/actions"</span>  -H <span class="s2">"API-Key: apikey"</span>
+</code></pre><h3 id='request-body'>Request Body:</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"resize"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ram"</span><span class="p">:</span><span class="w"> </span><span class="s2">"512"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cpu"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>Must be</td>
+<td>If set to true, the result will also include cats.</td>
+</tr>
+<tr>
+<td>available</td>
+<td>true</td>
+<td>If set to false, the result will include kittens that have already been adopted.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response Body:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"83aeefad-7414-45ba-9405-e3b3b150ac0d"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ali"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ali"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ram"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cpu"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"disk"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"online"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-12 21:04:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UBUNTU"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ubuntu"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"network"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92.222.115.157/30"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"netmask"</span><span class="p">:</span><span class="w"> </span><span class="s2">"255.255.255.0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"151.80.25.254"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02:02:00:e0:20:88"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"resource_used"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"ram"</span><span class="p">:</span><span class="w"> </span><span class="mi">141</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"disk"</span><span class="p">:</span><span class="w"> </span><span class="mi">511</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"netin"</span><span class="p">:</span><span class="w"> </span><span class="mi">8276</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"netout"</span><span class="p">:</span><span class="w"> </span><span class="mi">704</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"uptime"</span><span class="p">:</span><span class="w"> </span><span class="mi">4502681</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
 </aside>
