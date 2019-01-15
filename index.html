@@ -405,14 +405,14 @@ available | true | If set to false, the result will include kittens that have al
 <p>This endpoint retrieves a specific Lxc.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://api.haiocloud.com/v1/lxc/&lt;GUID&gt;</code></p>
-<h1 id='lxc-actions'>Lxc actions</h1><h2 id='resize'>Resize</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.haiocloud.com/v1/lxc/&lt;string:guid&gt;/actions"</span>  -H <span class="s2">"API-Key: apikey"</span>
+<h1 id='lxc-actions'>Lxc actions</h1><h2 id='resize'>Resize</h2><pre class="highlight shell tab-shell"><code>curl -X POST -H <span class="s2">"Content-Type: application/json"</span> -H <span class="s2">"API-Key: apikey"</span> -d <span class="s1">'{"type":"resize","ram": "0.5","cpu" : "1"}'</span> <span class="s2">"https://api.haiocloud.com/v1/lxc/&lt;string:guid&gt;/actions"</span>
 </code></pre>
 <blockquote>
 <p>Request Body:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"resize"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ram"</span><span class="p">:</span><span class="w"> </span><span class="s2">"512"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ram"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"cpu"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -426,11 +426,11 @@ available | true | If set to false, the result will include kittens that have al
 <tr>
 <td>type</td>
 <td>Must be</td>
-<td>If set to true, the result will also include cats.</td>
+<td>true</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
+<td>ram</td>
+<td>Ram in GB</td>
 <td>If set to false, the result will include kittens that have already been adopted.</td>
 </tr>
 </tbody></table>
