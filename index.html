@@ -237,12 +237,9 @@
           </li>
           <li>
             <a href="#lxc-actions" class="toc-h1 toc-link" data-title="Lxc actions">Lxc actions</a>
-          </li>
-          <li>
-            <a href="#resize" class="toc-h1 toc-link" data-title="Resize">Resize</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#request-body" class="toc-h2 toc-link" data-title="Request Body:">Request Body:</a>
+                    <a href="#resize" class="toc-h2 toc-link" data-title="Resize">Resize</a>
                   </li>
               </ul>
           </li>
@@ -408,7 +405,7 @@ available | true | If set to false, the result will include kittens that have al
 <p>This endpoint retrieves a specific Lxc.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://api.haiocloud.com/v1/lxc/&lt;GUID&gt;</code></p>
-<h1 id='lxc-actions'>Lxc actions</h1><h1 id='resize'>Resize</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.haiocloud.com/v1/lxc/&lt;string:guid&gt;/actions"</span>  -H <span class="s2">"API-Key: apikey"</span>
+<h1 id='lxc-actions'>Lxc actions</h1><h2 id='resize'>Resize</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.haiocloud.com/v1/lxc/&lt;string:guid&gt;/actions"</span>  -H <span class="s2">"API-Key: apikey"</span>
 </code></pre><h3 id='request-body'>Request Body:</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"resize"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ram"</span><span class="p">:</span><span class="w"> </span><span class="s2">"512"</span><span class="p">,</span><span class="w">
